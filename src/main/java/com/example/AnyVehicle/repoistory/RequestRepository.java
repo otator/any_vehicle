@@ -2,11 +2,12 @@ package com.example.AnyVehicle.repoistory;
 
 import com.example.AnyVehicle.model.Request;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
 public interface RequestRepository extends JpaRepository<Request, Long> {
 
-
-    List<Request> findAllByUser(Long userId);
+//    @Query("select * from requests r where r.u_id = ?1")
+    List<Request> findAllByUser_id(long userId);
 }

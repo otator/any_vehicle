@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User request</title>
+</head>
+<body>
+  <h1 th:if="${requests.isEmpty()}">No Requests yet.  <a href="/send_request" >make new request</a></h1>
+  <div th:each ="request: ${requests}">
+    <table>
+      <th>
+      <td>Manufacturer</td>
+      <td>model</td>
+      <td>type</td>
+      <td>status</td>
+    </th>
+      <tr>
+        <td th:text ="${request.carManufacturer}"> </td>
+        <td th:text ="${request.carModel}"> </td>
+        <td th:text ="${request.carType}"> </td>
+        <td th:text ="${request.status}"> </td>
+      </tr>
+    </table>
+
+  </div>
+  
+</body>
+</html>

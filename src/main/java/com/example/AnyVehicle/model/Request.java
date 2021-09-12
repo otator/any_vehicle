@@ -18,10 +18,14 @@ public class Request {
     // diesel, electrical, or hybrid
     private String carType;
 
+    // status of request (pending, accepted, rejected)
+    private String status;
+
     // A description of what maintenance the car needs.
     private String maintenanceDescription;
 
     @ManyToOne
+    @JoinColumn(name="user_id")
     private UserApplication user;
 
     // empty constructor for the framework
@@ -29,13 +33,17 @@ public class Request {
 
     }
 
-    public Request(String carManufacturer, String carModel, String carNumber, String carType, UserApplication user){
+    public Request(String carManufacturer, String carModel, String carNumber, String carType, UserApplication user, String maintenanceDescription){
         this.carManufacturer = carManufacturer;
         this.carModel = carModel;
         this.carNumber = carNumber;
         this.carType = carType;
+        this.maintenanceDescription = maintenanceDescription;
+        this.status = "pending...";
+
         this.user = user;
     }
+
 
     public long getId() {
         return id;
@@ -88,5 +96,27 @@ public class Request {
 
     public void setUser(UserApplication user) {
         this.user = user;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" +
+                "id=" + id +
+                ", carManufacturer='" + carManufacturer + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carNumber='" + carNumber + '\'' +
+                ", carType='" + carType + '\'' +
+                ", status='" + status + '\'' +
+                ", maintenanceDescription='" + maintenanceDescription + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
