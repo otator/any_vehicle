@@ -22,7 +22,7 @@ public class UserApplication implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private long id;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Request> requests;
@@ -46,7 +46,7 @@ public class UserApplication implements UserDetails {
         this.username = username;
         this.phone = phone;
         this.password = password;
-        this.role = role;
+//        this.role = role;
 
     }
 
@@ -113,7 +113,7 @@ public class UserApplication implements UserDetails {
     }
 
     public long getUserId() {
-        return userId;
+        return id;
     }
 
    public void setUsername(String username){
@@ -127,14 +127,14 @@ public class UserApplication implements UserDetails {
     public void setRequests(List<Request> requests) {
         this.requests = requests;
     }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
+//
+//    public String getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(String role) {
+//        this.role = role;
+//    }
 
     //
 //    public Set<Role> getRoles() {

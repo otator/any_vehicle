@@ -34,4 +34,16 @@ public class GeneralController{
     public String showRequestsPage(){
         return "requests.html";
     }
+
+    // show request form
+    @GetMapping("/send_request")
+    public String showRequestForm(){
+        return "request_form.html";
+    }
+
+    // show current user requests
+    @GetMapping("/myrequest")
+    public String showUserRequestsPage(){
+        return "user_request.html";
+    }
 }
