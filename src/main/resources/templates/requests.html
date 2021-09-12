@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Requests of Maintenance</title>
 </head>
+
 <body>
   <h1>This should only accessed by Admin</h1>
-  
+
+  <h1 th:if="${requests.isEmpty()}">There is no requests</h1>
+  <div th:each="request: ${requests}">
+    <table>
+      <th>
+      <td>Car</td>
+      <td>Number and type</td>
+      <td>Client</td>
+      <td>Phone</td>
+      <td>request</td>
+      </th>
+      <tr>
+        <td th:text="${request.getCar()}"> </td>
+        <td th:text="${request.getCarInfo()}"> </td>
+        <td th:text="${request.user.getFullName()}"> </td>
+        <td th:text="${request.user.phone}"></td>
+        <td>
+          <form th:action="'/accept/' + ${request.id} + '?_method=PUT'" method="POST"><input type="submit" value="Accept"></form>
+          <form th:action="'/dismiss/' + ${request.id} + '?_method=PUT'" method="POST"><input type="submit" value="Dismiss"></form>
+        </td>
+
+      </tr>
+    </table>
+
+
+
+
+  </div>
+
+
 </body>
+
 </html>

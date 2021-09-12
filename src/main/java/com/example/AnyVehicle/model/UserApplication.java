@@ -148,4 +148,8 @@ public class UserApplication implements UserDetails {
 //    public void addRole(Role role){
 //        this.roles.add(role);
 //    }
+
+    public String getFullName(){
+        return firstName + " " + lastName;
+    }
 }

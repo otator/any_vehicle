@@ -106,6 +106,14 @@ public class Request {
         this.status = status;
     }
 
+    public String getCar(){
+        return carManufacturer + " " + carModel;
+    }
+
+    public String getCarInfo(){
+        return carNumber + " " + carType;
+    }
+
     @Override
     public String toString() {
         return "Request{" +

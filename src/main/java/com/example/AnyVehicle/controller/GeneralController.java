@@ -29,11 +29,6 @@ public class GeneralController{
         return "sign_up.html";
     }
 
-    //show requests pages
-    @GetMapping("/requests")
-    public String showRequestsPage(){
-        return "requests.html";
-    }
 
     // show request form
     @GetMapping("/send_request")
