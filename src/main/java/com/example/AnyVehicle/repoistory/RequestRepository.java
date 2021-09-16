@@ -10,4 +10,7 @@ public interface RequestRepository extends JpaRepository<Request, Long> {
 
 //    @Query("select * from requests r where r.u_id = ?1")
     List<Request> findAllByUser_id(long userId);
+
+    @Query("select count(status) from requests where status = ?1")
+    Integer getStatusNumber(String status);
 }

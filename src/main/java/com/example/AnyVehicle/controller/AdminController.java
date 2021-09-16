@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminController {
@@ -26,6 +28,11 @@ public class AdminController {
     public String showAllRequests(Model model){
         List<Request> requests = requestRepository.findAll();
         model.addAttribute("requests", requests);
+        Map<String, Integer> chartData = new HashMap<>();
+        chartData.put("pending", requestRepository.getStatusNumber("pending..."));
+        chartData.put("accepted", requestRepository.getStatusNumber("accepted"));
+        chartData.put("dismissed", requestRepository.getStatusNumber("dismissed"));
+        model.addAttribute("chartData", chartData);
         return "requests.html";
     }
 
@@ -46,6 +53,7 @@ public class AdminController {
         requestRepository.save(request);
         return new RedirectView("/requests");
     }
+
 
 
 }

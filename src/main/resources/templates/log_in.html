@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/forms_style.css">
+  <th:block th:replace="../static/fragments/fragment.html :: links"></th:block>
   <title>login</title>
 </head>
 <body>
+  <th:block th:replace="../static/fragments/fragment.html :: nav"></th:block>
   <div class="login_form">
+    <h3>Log in</h3>
     <form action="/login" method="POST">
     
       <input type="text" name="username" id="username" placeholder="Enter Username..." required>
       <input type="password" name="password" id="password" placeholder="Enter your password..." required>
-      <input type="submit" value="Login">
-      <div> Don't have an account? <a href="/signup">Sign up</a> </div>
+      <input class="login-btn" type="submit" value="Login">
+      <div style="color: white; text-align: center;"> Don't have an account? <a href="/signup">Sign up</a> </div>
       
     </form>
 

@@ -3,93 +3,120 @@
   --red: #d90429;
   --gray: #9b9b9b;
   --white: #ffffff;
-
+  --dark: #252525;
+  --light_dark: #3e3e3e;
+  --light_gray: #676767;
 }
 
-.navbar {
-  /* overflow: hidden; */
-  height: 300px;
-  background-color: #333;
-  font-family: Arial;
-}
 
-/* Links inside the navbar */
-.navbar a {
-  /* float: left; */
-  font-size: 16px;
-  color: var(--gray);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* The dropdown container */
-.dropdown {
-  /* float: left; */
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.dropdown:hover .dropbtn {
+.call-us-button{
+  background-color: var(--red);
+  font-size: 18px;
+  width: 150px;
+  height: 50px;
+  max-height: 150px;
   color: var(--white);
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-decoration-color: var(--yellow); 
+  margin-right: 10px;
+  float: right;
+  transform: translateY(-200%);
 }
 
-.navbar a:hover{
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-decoration-color: var(--yellow);
-}
+body {
+  margin: 0;
+  padding: 0;
+ }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+ .container{
+   background-color: var(--dark);
+   display: grid;
+   height: 150px;
+   grid-template-rows: 1fr 3fr;
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  /* float: none; */
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+ }
+p{
+  color: var(--light_gray);
 }
+ .upper-nav{
+   padding: 10px;
+   display: grid;
+   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+   background-color: var(--light_dark);
+ }
+ a{
+   color: var(--gray);
+   font-size: 20px;
+ }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+ .nav-bar {
+   height: 150px;
+   background: var(--dark);
+ }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.nav_items{
-  margin-left: 250px;
-}
-
-.logo{
-  margin-block-start: 10px;
-
-}
+ .nav-list{
+   transform: translateX(50%);
+ }
+  
+ .logo {
+   position: absolute; 
+   float: left;
+   line-height: 150px;
+   text-transform: uppercase;
+   font-size: 1.4em;
+ }
+ .logo a img {
+  max-height: 150px;
+ }
+ .logo a,
+ .logo a:visited {
+   color: var(--gray);
+   text-decoration: none;
+ }
+  
+ .nav-container {
+   max-width: 1000px;
+ }
+  
+ nav {
+   float: right;
+   margin-left: 300px;
+ }
+ nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+ nav ul li {
+   float: left;
+   position: relative;
+ }
+ nav ul li a,
+ nav ul li a:visited {
+   display: block;
+   padding: 0 20px;
+   line-height: 150px;
+   background: #262626;
+   color: var(--gray);
+   text-decoration: none;
+ }
+ nav ul li a:hover,
+ nav ul li a:visited:hover {
+   text-decoration: underline;
+   text-decoration-color: var(--yellow);
+   text-decoration-thickness: 5px;
+   color: #ffffff;
+ }
+ 
+ nav ul li ul li {
+   min-width: 190px;
+ }
+ nav ul li ul li a {
+   padding: 15px;
+   line-height: 20px;
+ }
+  
+ .nav-dropdown {
+   position: absolute;
+   display: none;
+   z-index: 1;
+   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+ }

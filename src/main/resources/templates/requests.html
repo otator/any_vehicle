@@ -1,43 +1,106 @@
-<!DOCTYPE html>
+<!DOCTYPE html  SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="/assets/style2.css">
   <title>Requests of Maintenance</title>
+
+
 </head>
 
 <body>
-  <h1>This should only accessed by Admin</h1>
+
+
+  <h1>All Requests</h1>
 
   <h1 th:if="${requests.isEmpty()}">There is no requests</h1>
-  <div th:each="request: ${requests}">
-    <table>
-      <th>
+  
+    <table class="table">
+      <thead>
       <td>Car</td>
       <td>Number and type</td>
       <td>Client</td>
       <td>Phone</td>
+      <td>status</td>
       <td>request</td>
-      </th>
-      <tr>
-        <td th:text="${request.getCar()}"> </td>
-        <td th:text="${request.getCarInfo()}"> </td>
-        <td th:text="${request.user.getFullName()}"> </td>
-        <td th:text="${request.user.phone}"></td>
-        <td>
-          <form th:action="'/accept/' + ${request.id} + '?_method=PUT'" method="POST"><input type="submit" value="Accept"></form>
-          <form th:action="'/dismiss/' + ${request.id} + '?_method=PUT'" method="POST"><input type="submit" value="Dismiss"></form>
-        </td>
+      </thead>
+      <div th:each="request: ${requests}">
 
-      </tr>
+        <tr>
+          <td th:text="${request.getCar()}"> </td>
+          <td th:text="${request.getCarInfo()}"> </td>
+          <td th:text="${request.user.getFullName()}"> </td>
+          <td th:text="${request.user.phone}"></td>
+          <td th:text="${request.status}"></td>
+          <td>
+            <div class="button-container">
+              <form th:action="'/accept/' + ${request.id} + '?_method=PUT'" method="POST"><input class="acceptBtn" type="submit" value="Accept"></form>
+              <form th:action="'/dismiss/' + ${request.id} + '?_method=PUT'" method="POST"><input class ="dismissBtn" type="submit" value="Dismiss"></form>
+            </div>
+          </td>
+        </tr>
+      </div>
     </table>
 
 
-
-
-  </div>
+    <h2>Chart that represents requests upon thier status</h2>
+  <div text-align="center" style="width: 1000px;" class="chart-container">
+    <div id="chart_div" class="chart-container"></div>
+    <div id="piechart" style="width: 900px; height: 500px;" class="chart-container-pie"></div>
+</div>
+<script th:inline="javascript">
+    var real_data = /*[[${chartData}]]*/'noValue';
+    $(document).ready(function() {
+        google.charts.load('current', {
+            packages : [ 'corechart', 'bar' ]
+        });
+        google.charts.setOnLoadCallback(drawColumnChart);
+        google.charts.setOnLoadCallback(drawPieChart);
+    });
+    function drawColumnChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Year');
+        data.addColumn('number', 'number');
+        Object.keys(real_data).forEach(function(key) {
+            data.addRow([ key, real_data[key] ]);
+        });
+        var options = {
+            title : 'Request Status',
+            hAxis : {
+                title : 'requests',
+            },
+            vAxis : {
+                title : 'status Count'
+            }
+        };
+        var chart = new google.visualization.ColumnChart(document
+                .getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+    function drawPieChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'requests');
+        data.addColumn('number', 'number');
+        Object.keys(real_data).forEach(function(key) {
+            data.addRow([ key, real_data[key] ]);
+        });
+        var options = {
+            title : 'Requests status'
+        };
+        var chart = new google.visualization.PieChart(document
+                .getElementById('piechart'));
+        chart.draw(data, options);
+    }
+</script>
 
 
 </body>

@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <th:block th:replace="../static/fragments/fragment.html :: links"></th:block>
+  <link rel="stylesheet" href="/assets/request_style.css">
   <title>Request</title>
 </head>
+
 <body>
-  <form method="POST" action="/send_request">
-    <select name="manufacturer" id="manufacturer">
-      <option value="BMW">BMW</option>
-      <option value="mercedes">mercedes</option>
-    </select>
-
-    <input type="text" name="model" id="model" required placeholder="car model (ex S500)">
-
-    <input type="text" name="carNumber" id="carNumber" required placeholder="car number...">
-
-    <div>
-      <label for="diesel">Diesel</label>
-      <input type="radio" name="type" id="diesel" value="diesel" checked><br>
-
-      <label for="electrical">Electrical</label>
-      <input type="radio" name="type" id="electrical" value="electrical"><br>
-
-      <label for="hybrid">Hybrid</label>
-      <input type="radio" name="tybe" id="hybrid" value="hybrid" >
+  <th:block th:replace="../static/fragments/fragment.html :: nav"></th:block>
+  <div class="request_container">
+    <form method="POST" action="/send_request">
+      <select name="manufacturer" id="manufacturer">
+        <option value="BMW">BMW</option>
+        <option value="mercedes">mercedes</option>
+      </select>
       <br>
-    </div>
-    <input type="submit" value="Send Request">
+
+      <input class="input" type="text" name="model" id="model" required placeholder="car model (ex S500)">
+
+      <input class="input" type="text" name="carNumber" id="carNumber" required placeholder="car number...">
+
+      <div class="radio"> 
+        <div>
+
+          <label for="diesel">Diesel</label>
+          <input type="radio" name="type" id="diesel" value="diesel" checked>
+        </div>
+
+        <div>
+          <label for="electrical">Electrical</label>
+          <input type="radio" name="type" id="electrical" value="electrical">
+
+        </div>
+
+        <div>
+
+          <label for="hybrid">Hybrid</label>
+          <input type="radio" name="type" id="hybrid" value="hybrid">
+        </div>
+        <br>
+      </div>
+      <textarea id="description" cols="50" rows="15" name="description" type="text"
+        placeholder="Describe what is wrong with your car..." required></textarea><br>
+
+      <input class="submit-btn" type="submit" value="Send Request">
 
 
 
+    </form>
+  </div>
 
-
-
-    <textarea id="description" cols="70" rows="10" name="description" type="text"
-                  placeholder="Describe what is wrong with your car..." required></textarea><br>
-
-  </form>
-  
 </body>
+
 </html>

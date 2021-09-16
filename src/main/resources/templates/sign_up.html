@@ -4,20 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/forms_style.css">
+  <th:block th:replace="../static/fragments/fragment.html :: links"></th:block>
   <title>Create account</title>
 </head>
 <body>
+  <th:block th:replace="../static/fragments/fragment.html :: nav"></th:block>
   <div class ="signup_container">
+    <h3>Create Account</h3> 
     <form action="/signup" method="POST">
       <input type="text" name="firstName" id="firstName" required placeholder="Enter first name...">
       <input type="text" name="lastName" id="lastName" required placeholder="Enter last name..." >
       <input type="text" name="username" id="username" required placeholder="Enter a username..." >
-
       <input class="phone" type="text" name="phone" id="phone" required placeholder="Enter your phone...">
       <input class ="password" type="password" name="password" id="password" required placeholder="Enter a password...">
-      <input class="confirm_password" type="password" name="confirm_password" id="confirm_password" required placeholder="re-enter the password..." >
-      <input type="submit" value="Signup">
-      <div>Have an account already? <a href="/login">Login</a></div>
+      <input class="confirm_password" type="password" name="confirm_password" id="confirm_password" required placeholder="re-enter the password..." ><br>
+      <input class ="sign-up-btn" type="submit" value="Signup">
+      <div style="color: white; text-align: center;">Have an account already? <a href="/login">Login</a></div>
     </form>
   </div>
   
