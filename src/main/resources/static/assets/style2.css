@@ -1,0 +1,43 @@
+.table{
+  border: 2px solid black;
+  width: 90%;
+  margin: 5%;
+}
+th, td{
+  border: 2px solid black;
+  text-align: center;
+}
+
+input{
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.acceptBtn{
+  background-color: green;
+}
+
+.dismissBtn{
+  background-color: red;
+}
+h1, h2{
+  text-align: center;
+}
+
+.chart-container{
+  transform: translateX(12%);
+}
+.chart-container-pie{
+  transform: translateX(25%);
+}

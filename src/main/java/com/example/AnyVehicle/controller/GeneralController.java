@@ -41,4 +41,10 @@ public class GeneralController{
     public String showUserRequestsPage(){
         return "user_request.html";
     }
+
+    // show error page with access denied
+    @GetMapping("/error403")
+    public String showErrorPage(){
+        return "error403.html";
+    }
 }

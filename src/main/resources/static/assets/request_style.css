@@ -1,0 +1,74 @@
+.request_container{
+  height: 600px;
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(37, 37, 37);
+  
+}
+
+h3, h1, h2{
+  text-align: center;
+  color: var(--white)
+}
+.input{
+  height: 35px;
+  width: 300px;
+  display: block;
+  margin: auto;
+  text-indent: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+
+.submit-btn{
+  border-radius: 0px;
+  height: 40px;
+  width: 150px;
+  display: block;
+  margin: auto;
+  background-color: var(--red);
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+textarea{
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+select{
+  width: 300px;
+  height: 40px;
+  /* border-radius: 20px; */
+  margin-bottom: 40px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  outline: none;
+}
+
+label{
+  color: white;
+  font-size: 18px;
+}
+
+.radio{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10%;
+}
+
+
+.radio input{
+  height: 15px;
+  width: 15px;
+}
+

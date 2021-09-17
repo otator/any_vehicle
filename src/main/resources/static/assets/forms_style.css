@@ -1,0 +1,66 @@
+:root{
+  --yellow: #f6d72d;
+  --red: #d90429;
+  --gray: #9b9b9b;
+  --white: #ffffff;
+  --dark: #252525;
+}
+
+.signup_container{
+  height: 550px;
+  width: 400px;
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(37, 37, 37);
+  
+}
+.login_form{
+  height: 300px;
+  width: 400px;
+  display: block;
+  margin: auto;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(37, 37, 37);
+}
+
+h3, h1, h2{
+  text-align: center;
+  color: var(--white)
+}
+input{
+  height: 35px;
+  width: 300px;
+  text-indent: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 12%;
+  outline: none;
+}
+
+.sign-up-btn, .login-btn, .submit-btn{
+  border-radius: 0px;
+  height: 40px;
+  width: 100px;
+  display: block;
+  margin: auto;
+  background-color: var(--red);
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+a{
+  text-decoration: none;
+  color: yellow;
+}
+a:visited, a:hover{
+  color: var(--yellow);
+}
+
+.error-page{
+  background-color: var(--dark);
+}

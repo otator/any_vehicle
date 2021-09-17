@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <th:block th:fragment="links">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/assets/style.css">
+  </th:block>
+
+
+</head>
+<body>
+
+  <th:block th:fragment="nav">
+    <div class="container">
+      <section class="upper-nav">
+        <p>We Keep your engine running</p>
+        <p><i class="fas fa-map-marker-alt"></i> 364 Woodbridge Lane, Seattle</p>
+        <p>info@autolane.com</p>
+        <p>carrers <i class="fa fa-caret-down"></i></p>
+        <p>appointments</p>
+  
+      </section>
+      <section class="nav-bar">
+        <div class="nav-container">
+          <div class="logo">
+            <a href="/"><img src="/assets/logo.png"></a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="#">About Us <i class="fa fa-caret-down"></i> </a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="#">Who we are</a>
+                  </li>
+                  <li>
+                    <a href="#">Our Vision</a>
+                  </li>
+                  <li>
+                    <a href="#">Why Us</a>
+                  </li>
+                </ul>
+              </li>
+  
+              <li>
+                <a href="#">Services <i class="fa fa-caret-down"></i> </a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="#">Fix car</a>
+                  </li>
+                  <li>
+                    <a href="#">Change Oil</a>
+                  </li>
+                  <li>
+                    <a href="#">Sell Cars</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#!">Blog <i class="fa fa-caret-down"></i> </a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="#">latest new</a>
+                  </li>
+                  <li>
+                    <a href="#">interesting topics</a>
+                  </li>
+                </ul>
+              </li>
+  
+              <li>
+                <a href="#">Shop <i class="fa fa-caret-down"></i> </a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="#">accessories</a>
+                  </li>
+                </ul>
+              </li>
+  
+              <li>
+                <a href="#">Contact Us <i class="fa fa-caret-down"></i> </a>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="#">Email</a>
+                  </li>
+                  <li>
+                    <a href="#">Phone</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <button class="call-us-button">Call us Now</button>
+        </div>
+      </section>
+    </div>
+  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/assets/function.js"></script>
+    
+  </th:block>
+  
+</body>
+</html>

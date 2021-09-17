@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-        String encodedPassword = passwordEncoder().encode("admin");
+        String encodedPassword = passwordEncoder().encode("11");
         auth.inMemoryAuthentication().withUser("admin").password(encodedPassword)
                 .authorities("ADMIN");
     }
@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/requests").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .exceptionHandling().and()
+                .exceptionHandling().accessDeniedPage("/error403").and()
                 .sessionManagement()
                 .and().formLogin().loginPage("/login")
                 .loginProcessingUrl("/login")
